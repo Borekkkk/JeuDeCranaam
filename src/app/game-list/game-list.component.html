@@ -1,6 +1,10 @@
-<p>game-list !</p>
-<div *ngFor="let game of gamesList">
-    <a [title]="game.name + ' details, '">{{
-        game.name
-      }}</a>
+<h2>Catalogue de Jeux</h2>
+<div class="containerBox">
+  <div *ngFor="let game of gamesList" class="listBox">
+      <div [title]="game.name + ' details, '">
+          <h3>{{ game.name }} </h3>
+          <div>{{ game.description }}</div>
+          <div> <img src="../../assets/baseline_groups_black_24dp.png" />  Nombre de joueur : {{ game.nbPlayerMin }} - {{ game.nbPlayerMax }}</div>
+      </div>
+  </div>
 </div>
