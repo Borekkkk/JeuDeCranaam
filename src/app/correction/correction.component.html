@@ -1,0 +1,9 @@
+<h2>Salon de correction</h2>
+<div class="containerBox">
+  <div *ngFor="let question of questionList" class="listBox">
+      <form>
+          <h3> {{question.title}}</h3>
+          <p> {{question.reponse}}</p>
+      </form>
+  </div>
+</div>

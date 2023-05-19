@@ -3,6 +3,7 @@ export interface Question {
     title: string;
     type: string;
     choices: string[];
+    reponse: string;
   }
   
   export const question = [
@@ -15,7 +16,8 @@ export interface Question {
         "Tu n'a pas de chat, Filou est ton maître",
         "Filou",
         "Le frère de Teemo"
-      ]
+        ],
+      "reponse": "Filou"
     },
     {
       "id": 1,
@@ -27,12 +29,20 @@ export interface Question {
         "C",
         "D",
         "E"
-      ]
+      ],
+      "reponse": "D"
     },
     {
       "id": 2,
       "title": "Question input ",
-      "type": "userInput"
+      "type": "userInput",
+      "reponse": "Coucou Kiwi"
+    },
+    {
+      "id": 3,
+      "title":"En quelle année est sorti le jeu 'League of legends' ?",
+      "type": "userInput",
+      "reponse": "2009"
     }
   ];
   

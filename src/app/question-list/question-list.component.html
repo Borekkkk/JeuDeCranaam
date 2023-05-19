@@ -1,18 +1,25 @@
 <h2>Salon de question</h2>
 <div class="containerBox">
-  <div *ngFor="let question of questionList" class="listBox">
-      <form>
-          <div *ngIf="question.type == 'QCM'">
-            <h3>{{ question.title }} </h3>
-            <p *ngFor="let choice of question.choices" class="qcmChoices">
-              <input type="radio" id="{{ choice }}" name="answer_{{question.id}}" value="{{ choice }}"> 
-              <label for="{{ choice }}">{{ choice }}</label>
-            </p>
-          </div>
-          <div *ngIf="question.type == 'userInput'">
-            <h3>{{ question.title }} </h3>
-            <input type="text" id="{{ question.id }}" name="answer_{{question.id}}"> 
-          </div>
-      </form>
-  </div>
+  <form #questionForm="ngForm" (ngSubmit)="onSubmit(questionForm)">
+    <div *ngFor="let question of questionList" class="listBox">
+        
+            <div *ngIf="question.type == 'QCM'">
+              <h3>{{ question.title }} </h3>
+              <p *ngFor="let choice of question.choices" class="qcmChoices">
+                <input type="radio" id="{{ choice }}" name="answer_{{question.id}}" value="{{ choice }}" ngModel required> 
+                <label for="{{ choice }}">{{ choice }}</label>
+              </p>
+            </div>
+            <div *ngIf="question.type == 'userInput'">
+              <h3>{{ question.title }} </h3>
+              <input type="text" id="{{ question.id }}" name="answer_{{question.id}}" ngModel required> 
+            </div>
+            
+        
+    </div>
+    <button type="submit" [disabled]="!questionForm.valid">Soumettre mes trop bonnes réponses.</button>
+  </form>
+  <button type="button" routerLink="/correction">
+    Soumettre mes réponses.
+  </button>
 </div>
