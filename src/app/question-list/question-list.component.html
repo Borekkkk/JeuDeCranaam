@@ -1,0 +1,18 @@
+<h2>Salon de question</h2>
+<div class="containerBox">
+  <div *ngFor="let question of questionList" class="listBox">
+      <form>
+          <div *ngIf="question.type == 'QCM'">
+            <h3>{{ question.title }} </h3>
+            <p *ngFor="let choice of question.choices" class="qcmChoices">
+              <input type="radio" id="{{ choice }}" name="answer_{{question.id}}" value="{{ choice }}"> 
+              <label for="{{ choice }}">{{ choice }}</label>
+            </p>
+          </div>
+          <div *ngIf="question.type == 'userInput'">
+            <h3>{{ question.title }} </h3>
+            <input type="text" id="{{ question.id }}" name="answer_{{question.id}}"> 
+          </div>
+      </form>
+  </div>
+</div>

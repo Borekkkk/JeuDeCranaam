@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { GameListComponent } from './game-list/game-list.component';
+import { QuestionListComponent } from './question-list/question-list.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 
 @NgModule({
@@ -12,12 +12,12 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: GameListComponent },
+      { path: '', component: QuestionListComponent },
     ])
   ],
   declarations: [
     AppComponent,
-    GameListComponent,
+    QuestionListComponent,
     TopBarComponent
   ],
   providers: [],
